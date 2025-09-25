@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VoiceByBen — Portfolio 8-bit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Portfolio rétro 8-bit de Benoît — projets, musique, web.">
+</head>
+<body>
+  <!-- Effet scanlines/CRT -->
+  <div class="crt-overlay" aria-hidden="true"></div>
+  <div class="crt-overlay" aria-hidden="true"></div>
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <div class="ghost-overlay" aria-hidden="true"></div>
+
+  <main class="screen" role="main">
+    <header class="brand">
+      <h1 aria-label="VoiceByBen Portfolio">VOICEBYBEN</h1>
+      <button id="soundToggle" class="btn small" aria-pressed="false" aria-label="Activer le son">SOUND: OFF</button>
+      <button id="modeToggle" class="btn small" aria-pressed="false" aria-label="Basculer le mode d'affichage">MODE: COLOR</button>
+    </header>
+
+    <!-- Écran Start -->
+    <section id="screen-start" class="panel active" aria-labelledby="title-start">
+      <h2 id="title-start" class="title">PRESS START</h2>
+      <nav class="menu" aria-label="Menu principal">
+        <button class="menu-item selected" data-target="screen-about">▶ About</button>
+        <button class="menu-item" data-target="screen-projects">▶ Projects</button>
+        <button class="menu-item" data-target="screen-contact">▶ Contact</button>
+      </nav>
+      <p class="hint">↑ ↓ pour naviguer — Enter pour valider</p>
+    </section>
+
+    <!-- About -->
+    <section id="screen-about" class="panel" aria-labelledby="title-about">
+      <h2 id="title-about" class="title">ABOUT</h2>
+      <div class="about-wrap">
+        <img src="assets/img/avatar.png" alt="Avatar pixel de Benoît" class="avatar">
+        <div class="about-text">
+          <p class="mono">
+            Salut, moi c’est <strong>Benoît</strong> — prof d’éducation musicale, créateur sonore
+            et développeur web en devenir. J’adore le son 60s/70s, le pixel art et les interfaces ludiques.
+          </p>
+          <ul class="skills">
+            <li>HTML/CSS (structurer & styliser)</li>
+            <li>JavaScript (interactions)</li>
+            <li>Audio & UI (petites FX rétro)</li>
+          </ul>
+          <button class="btn back" data-target="screen-start">⟵ Back</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="screen-projects" class="panel" aria-labelledby="title-projects">
+      <h2 id="title-projects" class="title">PROJECTS</h2>
+      <div class="grid">
+        <!-- Duplique une “cartouche” par projet -->
+        <a class="card" href="#" target="_blank" rel="noopener">
+          <div class="cartridge">
+            <span class="label">VINYL STORE</span>
+          </div>
+          <span class="caption mono">Site vitrine (HTML/CSS/JS)</span>
+        </a>
+
+        <a class="card" href="#" target="_blank" rel="noopener">
+          <div class="cartridge">
+            <span class="label">PET SOUNDS</span>
+          </div>
+          <span class="caption mono">Mini-app audio</span>
+        </a>
+
+        <a class="card" href="#" target="_blank" rel="noopener">
+          <div class="cartridge">
+            <span class="label">REMIX LAB</span>
+          </div>
+          <span class="caption mono">Expé remix JS</span>
+        </a>
+      </div>
+      <button class="btn back" data-target="screen-start">⟵ Back</button>
+    </section>
+
+    <!-- Contact -->
+    <section id="screen-contact" class="panel" aria-labelledby="title-contact">
+      <h2 id="title-contact" class="title">CONTACT</h2>
+      <ul class="contact mono">
+        <li><a href="mailto:benemorine@gmail.com">benemorine@gmail.com</a></li>
+        <li><a href="https://github.com/VoiceByBen" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.fiverr.com/voicebyben" target="_blank" rel="noopener">Fiverr</a></li>
+      </ul>
+      <button class="btn back" data-target="screen-start">⟵ Back</button>
+    </section>
+
+    <footer class="footer mono">© 2025 VoiceByBen — 8-bit mode</footer>
+  </main>
+
+  <audio id="sfx-bleep" src="assets/sfx/bleep.mp3" preload="auto"></audio>
+  <audio id="sfx-select" src="assets/sfx/select.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
